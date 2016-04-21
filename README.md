@@ -1,0 +1,123 @@
+# react-native-i18n
+
+Integrates [I18n.js](https://github.com/fnando/i18n-js) with React Native. Uses the device's locale as default.
+
+## Installation
+
+
+`$ npm install react-native-i18n-complete --save`
+
+After installing the npm package you need to link the native modules. You can do so using rnpm.
+
+`$ rnpm link react-native-i18n`
+
+Or you can do it manually as follows:
+
+* iOS
+
+Add `RNI18n.xcodeproj` to **Libraries** and add `libRNI18n.a` to **Link Binary With Libraries** under **Build Phases**. [More info and screenshots about how to do this is available in the React Native documentation](http://facebook.github.io/react-native/docs/linking-libraries.html).
+
+* Android
+
+* `android/settings.gradle`
+
+```gradle
+...
+include ':react-native-i18n'
+project(':react-native-i18n').projectDir = new File(settingsDir, '../node_modules/react-native-i18n-complete/android/react-native-i18n')
+```
+
+* `android/app/build.gradle`
+
+```gradle
+dependencies {
+	...
+	compile project(':react-native-i18n')
+}
+```
+
+* register module (in MainActivity.java)
+
+```java
+...
+
+import rni18n.mobile.laplanete.ca.rni18n.RNI18nPackage; // <--- import
+
+public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
+	...
+
+    /**
+         * A list of packages used by the app. If the app uses additional views
+         * or modules besides the default ones, add more packages here.
+         */
+        @Override
+        protected List<ReactPackage> getPackages() {
+            return Arrays.<ReactPackage>asList(
+                new MainReactPackage(),
+                new RNI18nPackage()
+            );
+        }
+}
+```
+
+## Usage
+
+```js
+var I18n = require('react-native-i18n');
+
+var Demo = React.createClass({
+  render: function() {
+    return (
+      <Text>{I18n.t('greeting')}</Text>
+    )
+  }
+});
+
+// Enable fallbacks if you want `en-US` and `en-GB` to fallback to `en`
+I18n.fallbacks = true;
+
+I18n.translations = {
+  en: {
+    greeting: 'Hi!'
+  },
+  fr: {
+    greeting: 'Bonjour!'
+  }
+}
+```
+
+This will render `Hi!` for devices with the English locale, and `Bonjour!` for devices with the French locale.
+
+### Fallbacks
+When fallbacks are enabled (which is generally recommended), `i18n.js` will try to look up translations in the following order (for a device with `en_US` locale):
+- en-US
+- en
+
+**Note**: iOS locales use underscored (`en_US`) but `i18n.js` locales are dasherized (`en-US`). This conversion is done automatically for you.
+```js
+I18n.fallbacks = true;
+
+I18n.translations = {
+  'en': {
+    greeting: 'Hi!'
+  },
+  'en-GB': {
+    greeting: 'Hi from the UK!'
+  }
+}
+```
+For a device with a `en_GB` locale this will return `Hi from the UK!'`, for a device with a `en_US` locale it will return `Hi!`.
+
+### Device's locale
+You can get the device's locale with the `RNI18n` native module:
+
+```js
+var deviceLocale = require('react-native').NativeModules.RNI18n.locale
+```
+Returns `en_US`.
+
+### I18n.js documentation
+For more info about I18n.js methods (`localize`, `pluralize`, etc) and settings see [its documentation](https://github.com/fnando/i18n-js#setting-up).
+
+## Licence
+MIT
