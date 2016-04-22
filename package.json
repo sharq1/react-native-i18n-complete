@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      "react-native-i18n-complete",
+      "/Users/damian/Projects/photoslim-mobile"
+    ]
+  ],
+  "_from": "react-native-i18n-complete@latest",
+  "_id": "react-native-i18n-complete@0.1.8",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-native-i18n-complete",
+  "_nodeVersion": "5.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/react-native-i18n-complete-0.1.8.tgz_1459099890239_0.6547863041050732"
+  },
+  "_npmUser": {
+    "email": "n@laplanete.ca",
+    "name": "mrklar"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "react-native-i18n-complete",
+    "raw": "react-native-i18n-complete",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-i18n-complete/-/react-native-i18n-complete-0.1.8.tgz",
+  "_shasum": "c64f9f8bbbfd9bd20847d5e3a308ee918c68c895",
+  "_shrinkwrap": null,
+  "_spec": "react-native-i18n-complete",
+  "_where": "/Users/damian/Projects/photoslim-mobile",
+  "author": {
+    "name": "Alexander Zaytsev & Nicolas Desjardins"
+  },
+  "dependencies": {},
+  "description": "React Native and I18n.js integration",
+  "devDependencies": {
+    "react": "0.14.7",
+    "react-native": "^0.22.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "c64f9f8bbbfd9bd20847d5e3a308ee918c68c895",
+    "tarball": "https://registry.npmjs.org/react-native-i18n-complete/-/react-native-i18n-complete-0.1.8.tgz"
+  },
+  "gitHead": "dc3555afebf637410bb3f303cfd7f8a1918e7ef7",
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "android",
+    "i18n"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "n@laplanete.ca",
+      "name": "mrklar"
+    }
+  ],
+  "name": "react-native-i18n-complete",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "github.com:mrKlar/react-native-i18n.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.8"
+}
